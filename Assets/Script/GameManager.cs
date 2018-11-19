@@ -8,6 +8,12 @@ public class GameManager: MonoBehaviour {
     public string[] Data = new string[9];
     [SerializeField] List<int> choice = new List<int>();
 
+    private void Start()
+    {
+        int turn = Random.Range(0, 2);
+        if (turn == 0) ConterPlay();
+    }
+
     public void ConterPlay()
     {
         choice.Clear();
@@ -35,6 +41,12 @@ public class GameManager: MonoBehaviour {
             Debug.Log("O win");
             return;
         }
+
+        if (IsDraw())
+        {
+            Debug.Log("Draw");
+            return;
+        }
     }
 
     public bool IsWin(string s)
@@ -56,4 +68,15 @@ public class GameManager: MonoBehaviour {
 
         return false;
     }
+
+    public bool IsDraw()
+    {
+        for(int i = 0; i<Data.Length; i++)
+        {
+            if (Data[i] == string.Empty) return false;
+        }
+
+        return true;
+    }
+
 }

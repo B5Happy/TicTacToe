@@ -24,10 +24,18 @@ public class SelectBox : MonoBehaviour {
         {
             Debug.Log("X win");
             return;
+        } 
+        else if (gm.IsDraw())
+        {
+            
+            Debug.Log("Draw");
+             
         }
         else
         {
             gm.ConterPlay();
         }
+
+
     }
 }
