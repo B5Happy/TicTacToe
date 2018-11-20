@@ -23,13 +23,14 @@ public class SelectBox : MonoBehaviour {
         if (gm.IsWin("X"))
         {
             Debug.Log("X win");
+            gm.panel.SetActive(true);
             return;
         } 
         else if (gm.IsDraw())
         {
             
             Debug.Log("Draw");
-             
+            gm.panel.SetActive(true);
         }
         else
         {
