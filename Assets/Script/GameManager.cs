@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class GameManager: MonoBehaviour {
 
     public string[] Data = new string[9];
-    [SerializeField] List<int> choice = new List<int>();
     public GameObject panel;
+
+    AI Bot = new AI();
 
     private void Start()
     {
@@ -17,17 +18,9 @@ public class GameManager: MonoBehaviour {
 
     public void ConterPlay()
     {
-        choice.Clear();
 
-        for(int i= 0; i < Data.Length; i++)
-        {
-            if (Data[i] == string.Empty)
-            {
-                choice.Add(i);
-            }
-        }
 
-        int button = choice[Random.Range(0, choice.Count)];
+        int button = Bot.BestPlay();
 
         Button btn = GameObject.Find(button.ToString()).GetComponent<Button>();
 
