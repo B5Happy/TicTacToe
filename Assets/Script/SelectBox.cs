@@ -30,7 +30,9 @@ public class SelectBox : MonoBehaviour {
         {
             
             Debug.Log("Draw");
+            gm.ToColorDraw();
             gm.panel.SetActive(true);
+
         }
         else
         {
