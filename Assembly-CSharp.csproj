@@ -61,10 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\AI.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\Go.cs" />
-    <Compile Include="Assets\Script\SelectBox.cs" />
+    <Compile Include="Assets\Script\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Script\Menu\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Script\VsBot\AI.cs" />
+    <Compile Include="Assets\Script\VsBot\GameManager.cs" />
+    <Compile Include="Assets\Script\VsBot\Go.cs" />
+    <Compile Include="Assets\Script\VsBot\SelectBox.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Saly/Desktop/TicTacToe/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
