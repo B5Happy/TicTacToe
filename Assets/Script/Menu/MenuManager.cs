@@ -16,5 +16,15 @@ public class MenuManager : MonoBehaviour {
         SceneManager.LoadScene("VsFriend");
     }
 
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Setting()
+    {
+        SceneManager.LoadScene("Setting");
+    }
+
 
 }

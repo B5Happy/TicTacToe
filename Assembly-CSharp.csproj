@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Menu\MenuManager.cs" />
     <Compile Include="Assets\Script\Menu\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Script\Volume.cs" />
     <Compile Include="Assets\Script\VsBot\AI.cs" />
     <Compile Include="Assets\Script\VsBot\GameManager.cs" />
     <Compile Include="Assets\Script\VsBot\Go.cs" />

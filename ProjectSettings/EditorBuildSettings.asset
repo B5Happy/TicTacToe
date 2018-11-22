@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VsFriend.unity
     guid: 1e15b88f4c3648542a0d0e3133ac1eb3
+  - enabled: 1
+    path: Assets/Scenes/Setting.unity
+    guid: a111d2a8547bd604e845785f4813a377
   m_configObjects: {}
