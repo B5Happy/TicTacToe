@@ -67,6 +67,9 @@
     <Compile Include="Assets\Script\VsBot\GameManager.cs" />
     <Compile Include="Assets\Script\VsBot\Go.cs" />
     <Compile Include="Assets\Script\VsBot\SelectBox.cs" />
+    <Compile Include="Assets\Script\VsFriend\Go2.cs" />
+    <Compile Include="Assets\Script\VsFriend\ManagerVF.cs" />
+    <Compile Include="Assets\Script\VsFriend\WriteOXO.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Saly/Desktop/TicTacToe/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

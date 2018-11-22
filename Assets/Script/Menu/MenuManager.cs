@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
+
     public void VsBot()
     {
         SceneManager.LoadScene("VsBot");
     }
+
+    public void VsFriend()
+    {
+        SceneManager.LoadScene("VsFriend");
+    }
+
+
 }
