@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class GameManager: MonoBehaviour {
 
+    //Where we will store the Data
     public string[] Data = new string[9];
-    public GameObject panel;
 
+    public GameObject panel;
+    public static int AxeScore = 1;
+
+    //Call AI class for the computer choise which box to tick
     AI Bot = new AI();
+
 
     private void Start()
     {
+        //Choise which player start playing first
         int turn = Random.Range(0, 2);
         if (turn == 0) ConterPlay();
     }
+
+
 
     public void ConterPlay()
     {
@@ -30,22 +38,26 @@ public class GameManager: MonoBehaviour {
 
         Data[button] = "O";
 
+        
         if (IsWin("O"))
         {
-            Debug.Log("O win");
+            //Debug.Log("O win");
             panel.SetActive(true);
+            //GameObject.Find("AxeScore").GetComponent<Text>().text = AxeScore.ToString();
+            //Start();
             return;
         }
 
         if (IsDraw())
         {
-            Debug.Log("Draw");
+            //Debug.Log("Draw");
             panel.SetActive(true);
             ToColorDraw();
             return;
         }
     }
 
+    // To decide the winner we will go trought each winning case
     public bool IsWin(string s)
     {
 
@@ -100,11 +112,34 @@ public class GameManager: MonoBehaviour {
         return false;
     }
 
+    //To show the winnng move
     public void ToColor(int b1, int b2, int b3)
     {
         GameObject.Find(b1.ToString()).GetComponent<Button>().GetComponent<Image>().color = Color.blue;
         GameObject.Find(b2.ToString()).GetComponent<Button>().GetComponent<Image>().color = Color.blue;
         GameObject.Find(b3.ToString()).GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        
+    }
+
+    public void Restart()
+    {
+        /*GameObject.Find("0").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("1").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("2").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("3").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("4").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("5").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("6").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("7").GetComponent<Button>().GetComponent<Image>().color = Color.blue;
+        GameObject.Find("8").GetComponent<Button>().GetComponent<Image>().color = Color.blue;*/
+
+        for(int i = 0; i<8; i++)
+        {
+            GameObject.Find(i.ToString()).GetComponent<Button>().GetComponent<Image>().color = Color.white;
+        }
+
+        Start();
+
     }
 
     public bool IsDraw()
@@ -125,6 +160,7 @@ public class GameManager: MonoBehaviour {
         }
 
     }
+
 
 }
 

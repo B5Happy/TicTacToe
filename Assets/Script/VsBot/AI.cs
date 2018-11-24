@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 public class AI {
 
     List<int> choice = new List<int>();
@@ -21,14 +22,14 @@ public class AI {
             }
         }
 
+        // Try to search for a winning play/move
         for(int i=0; i < DataAI.Length; i++)
         {
             if(DataAI[i] == String.Empty)
             {
                 DataAI[i] = "O";
                 if(IsWin("O"))
-                {
-                    Debug.Log("Wining Play");
+                {                  
                     return i;
                 }
 
@@ -36,6 +37,7 @@ public class AI {
             }
         }
 
+        //Try to block the enemie to win 
         for (int i = 0; i < DataAI.Length; i++)
         {
             if (DataAI[i] == String.Empty)
@@ -43,7 +45,6 @@ public class AI {
                 DataAI[i] = "X";
                 if (IsWin("X"))
                 {
-                    Debug.Log("Wining Play for Human ...");
                     return i;
                 }
 
@@ -56,6 +57,7 @@ public class AI {
 
     }
 
+    // Listed different winning possibility
     public bool IsWin(string s)
     {
 
