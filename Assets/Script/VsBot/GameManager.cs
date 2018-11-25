@@ -9,15 +9,17 @@ public class GameManager: MonoBehaviour {
     public string[] Data = new string[9];
 
     public GameObject panel;
-    public static int AxeScore = 1;
+    public static int AxeScore = 0;
 
     //Call AI class for the computer choise which box to tick
     AI Bot = new AI();
 
 
+
     private void Start()
     {
         //Choise which player start playing first
+        GameObject.Find("AxeScore").GetComponent<Text>().text = AxeScore.ToString();
         int turn = Random.Range(0, 2);
         if (turn == 0) ConterPlay();
     }
@@ -43,7 +45,8 @@ public class GameManager: MonoBehaviour {
         {
             //Debug.Log("O win");
             panel.SetActive(true);
-            //GameObject.Find("AxeScore").GetComponent<Text>().text = AxeScore.ToString();
+            AxeScore = AxeScore + 1;
+            GameObject.Find("AxeScore").GetComponent<Text>().text = AxeScore.ToString();
             //Start();
             return;
         }

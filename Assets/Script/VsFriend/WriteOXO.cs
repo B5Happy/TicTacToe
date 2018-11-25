@@ -9,19 +9,22 @@ public class WriteOXO : MonoBehaviour {
 
     public int role;
     public static bool xplay = true;
-    
+
+    public static int MyScore = 0;
+    public static int FriendScore = 0;
+
 
     private void Start()
     {
         omg = GameObject.Find("ManagerVF").GetComponent<ManagerVF>();
+        GameObject.Find("MyScore").GetComponent<Text>().text = MyScore.ToString();
+        GameObject.Find("FriendScore").GetComponent<Text>().text = FriendScore.ToString();
     }
 
 
 
     public void Write()
     {
-
-
 
          if(xplay == true)
          {
@@ -34,14 +37,13 @@ public class WriteOXO : MonoBehaviour {
 
              if (omg.IsWin("X"))
              {
-                 Debug.Log("X win");
-                 omg.panel.SetActive(true);
-                 return;
+                omg.panel.SetActive(true);
+                MyScore = MyScore + 1;
+                GameObject.Find("MyScore").GetComponent<Text>().text = MyScore.ToString();
+                return;
              }
              else if (omg.IsDraw())
              {
-
-                 Debug.Log("Draw");
                  omg.ToColorDraw();
                  omg.panel.SetActive(true);
 
@@ -63,14 +65,13 @@ public class WriteOXO : MonoBehaviour {
 
              if (omg.IsWin("O"))
              {
-                 Debug.Log("O win");
-                 omg.panel.SetActive(true);
-                 return;
+                omg.panel.SetActive(true);
+                FriendScore = FriendScore + 1;
+                GameObject.Find("FriendScore").GetComponent<Text>().text = FriendScore.ToString();
+                return;
              }
              else if (omg.IsDraw())
              {
-
-                 Debug.Log("Draw");
                  omg.ToColorDraw();
                  omg.panel.SetActive(true);
 
@@ -82,28 +83,6 @@ public class WriteOXO : MonoBehaviour {
 
             xplay = true;
         }
-
-        /* if (role == 0)
-         {
-
-
-
-
-
-         }
-
-
-
-         if (role == 1)
-         {
-
-
-
-
-
-         }*/
-
-
 
 
     }
