@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public static string LastScene = "Menu";
+    
 
     public void VsBot()
     {
